@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+    <script>
+        //function gerar() {
+        //    $.ajax({
+        //        type: 'POST',
+        //        url: "/Home/PDF",
+        //        data: {},
+        //            success: function () {                  
+        //                var file = new Blob([data], { type: 'application/pdf' });
+        //                var fileURL = URL.createObjectURL(file);
+        //                window.open(fileURL);
+        //            }
+                
+        //            error: function () {//status is Error and the errorThrown is undefined
+        //                alert("erro");
+        //            }
+        //    });
+        //}
+    </script>
+</head>
+
+<body>
+
+    <h1>EXTRATO PREVIDENCIA</h1>
+    <input type="button" value="PDF" onclick="gerar();" />
+    <a href="/Home/Gerar" target="_blank">View document</a>
+
+    <a href="/Home/Gerar"><b>Criar PDF Extrato Previdência</b></a></td>
+
+    @if (ViewBag.Error != null)
+    { 
+        <h3>@ViewBag.Error</h3>
+    }
+
+</body>
+
+</html>
