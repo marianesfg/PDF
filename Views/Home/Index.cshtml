@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
     <script>
         //function gerar() {
@@ -26,13 +26,31 @@
     <input type="button" value="PDF" onclick="gerar();" />
     <a href="/Home/Gerar" target="_blank">View document</a>
 
-    <a href="/Home/Gerar"><b>Criar PDF Extrato Previdência</b></a></td>
+    <a href="/Home/Gerar"><b>Criar PDF Extrato Previdência</b></a>
 
-    @if (ViewBag.Error != null)
-    { 
-        <h3>@ViewBag.Error</h3>
+    @Html.BeginForm("Gerar1", "Home", FormMethod.Post, new { id = "myForm"})
+    {      
+        <select id="ano" name="ano">
+            <option id="2019">2019</option>            
+        </select>
+        <select id="mes" name="mes">
+            <option id="1">1</option>
+            <option id="2">2</option>
+        </select>
+        <input type="button" value="Visualizar" onclick="enviar();"/>
     }
 
 </body>
-
 </html>
+
+<script>
+    function setarMes() {
+        document.getElementById("mes").value = document.getElementById("teste").value;
+        alert(document.getElementById("mes").value);
+    }
+
+    function enviar() {
+        alert("enviando!");
+        document.getElementById("myForm").submit();
+    }
+</script>
